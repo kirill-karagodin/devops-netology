@@ -35,18 +35,10 @@ v0.12.23
 ``````````````
 3. Сколько родителей у коммита b8d720? Напишите их хеши.
 
-У коммита b8d720 2 родителя: 58dcac4b7 и ffbcf5581
+У коммита b8d720 2 родителя
 ``````````````
-$ git show b8d720^
-commit 56cd7859e05c36c06b56d013b55a252d0bb7e158
-Merge: 58dcac4b7 ffbcf5581
-Author: Chris Griggs <cgriggs@hashicorp.com>
-Date:   Mon Jan 13 13:19:09 2020 -0800
-
-    Merge pull request #23857 from hashicorp/cgriggs01-stable
-
-    [cherry-pick]add checkpoint links
-
+$ git show --pretty=format:' %P' b8d720
+ 56cd7859e05c36c06b56d013b55a252d0bb7e158 9ea88f22fc6269854151c571162c5bcf958bee2b
 
 ``````````````
 4. Перечислите хеши и комментарии всех коммитов которые были сделаны между тегами v0.12.23 и v0.12.24
