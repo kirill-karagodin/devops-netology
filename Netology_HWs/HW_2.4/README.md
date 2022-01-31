@@ -309,42 +309,12 @@ diff --git a/plugins.go b/plugins.go
 +}
 ``````````````
 7.Кто автор функции synchronizedWriters?
-###### Данная функция встречается в трех коммитах, изначально появилась в 5ac311e2a91e381e2f52234668b49ba670aa0fe5 автор которого Martin Atkins <mart@degeneration.co.uk>. 
+###### Данная функция встречается в 3 коммитах, изначально появилась в 5ac311e2a автор которого Martin Atkins <mart@degeneration.co.uk>. 
 ``````````````
-$ git log -SsynchronizedWriters
-commit bdfea50cc85161dea41be0fe3381fd98731ff786
-Author: James Bardin <j.bardin@gmail.com>
-Date:   Mon Nov 30 18:02:04 2020 -0500
+$ git log -S'synchronizedWriters' --pretty=format:'%h - %an %ae %ad'
+bdfea50cc - James Bardin j.bardin@gmail.com Mon Nov 30 18:02:04 2020 -0500
+fd4f7eb0b - James Bardin j.bardin@gmail.com Wed Oct 21 13:06:23 2020 -0400
+5ac311e2a - Martin Atkins mart@degeneration.co.uk Wed May 3 16:25:41 2017 -0700
 
-    remove unused
 
-commit fd4f7eb0b935e5a838810564fd549afe710ae19a
-Author: James Bardin <j.bardin@gmail.com>
-Date:   Wed Oct 21 13:06:23 2020 -0400
-
-    remove prefixed io
-
-    The main process is now handling what output to print, so it doesn't do
-    any good to try and run it through prefixedio, which is only adding
-    extra coordination to echo the same data.
-
-commit 5ac311e2a91e381e2f52234668b49ba670aa0fe5
-Author: Martin Atkins <mart@degeneration.co.uk>
-Date:   Wed May 3 16:25:41 2017 -0700
-
-    main: synchronize writes to VT100-faker on Windows
-
-    We use a third-party library "colorable" to translate VT100 color
-    sequences into Windows console attribute-setting calls when Terraform is
-    running on Windows.
-
-    colorable is not concurrency-safe for multiple writes to the same console,
-    because it writes to the console one character at a time and so two
-    concurrent writers get their characters interleaved, creating unreadable
-    garble.
-
-    Here we wrap around it a synchronization mechanism to ensure that there
-    can be only one Write call outstanding across both stderr and stdout,
-    mimicking the usual behavior we expect (when stderr/stdout are a normal
-    file handle) of each Write being completed atomically.
 ``````````````
