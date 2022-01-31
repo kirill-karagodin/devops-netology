@@ -1,7 +1,7 @@
-#devops-netology
-###create kirill-karagodin
+# devops-netology
+### create kirill-karagodin
 
-####HW2.1 Системы контроля версий.
+#### HW2.1 Системы контроля версий.
 
 В файле расположденном в директории devops-netology/terraform по правилам .gitignore буду проигнорированны
 ``````````````

@@ -1,10 +1,10 @@
-#devops-netology
-###performed by Kirill Karagodin
-####HW2.4 Инструменты GIT.
+# devops-netology
+### performed by Kirill Karagodin
+#### HW2.4 Инструменты GIT.
 1. Найдите полный хеш и комментарий коммита, хеш которого начинается на aefea.
 
-######Полный хеш клммита aefea - aefead2207ef7e2aa5dc81a34aedf0cad4c32545
-######Коментарий к коммиту - Update CHANGELOG.md
+###### Полный хеш клммита aefea - aefead2207ef7e2aa5dc81a34aedf0cad4c32545
+###### Коментарий к коммиту - Update CHANGELOG.md
 ``````````````
 $ git show aefea
 commit aefead2207ef7e2aa5dc81a34aedf0cad4c32545
@@ -28,13 +28,14 @@ index 86d70e3e0..588d807b1 100644
 ``````````````
 2. Какому тегу соответствует коммит 85024d3?
 
-######Коммиту 85024d3 соответсует тег v0.12.23
+###### Коммиту 85024d3 соответсует тег v0.12.23
 ``````````````
 $ git tag --points-at 85024d3
 v0.12.23
 ``````````````
 3. Сколько родителей у коммита b8d720? Напишите их хеши.
-######У коммита b8d720 2 родителя: 58dcac4b7 и ffbcf5581
+
+У коммита b8d720 2 родителя: 58dcac4b7 и ffbcf5581
 ``````````````
 $ git show b8d720^
 commit 56cd7859e05c36c06b56d013b55a252d0bb7e158
@@ -64,7 +65,8 @@ dd01a3507 Update CHANGELOG.md
 
 ``````````````
 5. Найдите коммит в котором была создана функция func providerSource, ее определение в коде выглядит так func providerSource(...) (вместо троеточего перечислены аргументы).
-######Данная функция **func providerSource(services disco.Disco)** была добавлена в коммите 8c928e835, в комите 5af1e6234 была удалена.
+
+###### Данная функция **func providerSource(services disco.Disco)** была добавлена в коммите 8c928e835, в комите 5af1e6234 была удалена.
 ``````````````
 $git log --oneline -p -S'func providerSource'
 commit 5af1e6234ab6da412fb8637393c5a17a1b293663
@@ -307,7 +309,7 @@ diff --git a/plugins.go b/plugins.go
 +}
 ``````````````
 7.Кто автор функции synchronizedWriters?
-######Данная функция встречается в трех коммитах, изначально появилась в 5ac311e2a91e381e2f52234668b49ba670aa0fe5 автор которого Martin Atkins <mart@degeneration.co.uk>. 
+###### Данная функция встречается в трех коммитах, изначально появилась в 5ac311e2a91e381e2f52234668b49ba670aa0fe5 автор которого Martin Atkins <mart@degeneration.co.uk>. 
 ``````````````
 $ git log -SsynchronizedWriters
 commit bdfea50cc85161dea41be0fe3381fd98731ff786
