@@ -3,14 +3,14 @@
 #### HW3.9 3.9. Элементы безопасности информационных систем
 
 1. Установите Bitwarden плагин для браузера. Зарегестрируйтесь и сохраните несколько паролей. 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/HW_3.9/bitwarden.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_3.9/bitwarden.JPG)
 2. Установите Google authenticator на мобильный телефон. Настройте вход в Bitwarden акаунт через
 Google authenticator OTP. 
 ````
 После включения двухфакторной авторизвции при заедении новой пары логи-пароль в Bitwarden появляется поля для ввода 
 ОТР кода
 ````
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/HW_3.9/bitwarden2.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_3.9/bitwarden2.JPG)
 3. Установите apache2, сгенерируйте самоподписанный сертификат, настройте тестовый сайт для работы по HTTPS.
 ````
 Генерация сертификата:
@@ -47,8 +47,8 @@ root@VB-micraPC:~# cat /etc/apache2/sites-available/default-ssl.conf
         </VirtualHost>
 </IfModule>
 ````
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/HW_3.9/web.JPG)
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/HW_3.9/cert.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_3.9/web.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_3.9/cert.JPG)
 
 4. Проверьте на TLS уязвимости произвольный сайт в интернете (кроме сайтов МВД, ФСБ, МинОбр, НацБанк, РосКосмос,
 РосАтом, РосНАНО и любых госкомпаний, объектов КИИ, ВПК ... и тому подобное).

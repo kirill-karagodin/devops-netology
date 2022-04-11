@@ -36,11 +36,11 @@ HTTP/1.1 301 Moved Permanently - означает что эта страница
 ``````
 2. Повторите задание 1 в браузере, используя консоль разработчика F12.
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/HW_3.6/net.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_3.6/net.JPG)
 ``````
 Дольше всего обробатывается GET апрос 301 (редирект)
 ``````
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/HW_3.6/net-1.jpg)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_3.6/net-1.jpg)
 
 3. Какой IP адрес у вас в интернете?
 ``````

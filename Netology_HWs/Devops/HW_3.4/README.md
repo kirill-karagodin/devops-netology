@@ -402,7 +402,7 @@ root@vagrant:~#
 Прописывать настройки сети в Vagrand не стал, так как у меня настройки сети на вертульной машине выставлены в режим
 сетевого моста.
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/HW_3.4/dashboard.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_3.4/dashboard.JPG)
 
 4. Можно ли по выводу dmesg понять, осознает ли ОС, что загружена не на настоящем оборудовании, а на системе 
 виртуализации?

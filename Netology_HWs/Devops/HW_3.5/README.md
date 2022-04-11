@@ -15,7 +15,7 @@
 ``````
 3. Сделайте vagrant destroy на имеющийся инстанс Ubuntu. Замените содержимое Vagrantfile
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/HW_3.5/vagrand_conf.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_3.5/vagrand_conf.JPG)
 ``````
 root@vagrant:/home/vagrant# fdisk -l
 Disk /dev/loop0: 55.45 MiB, 58130432 bytes, 113536 sectors
