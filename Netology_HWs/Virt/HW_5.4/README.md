@@ -80,9 +80,12 @@ done (1s)
 ````
 Дашборд
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Virt/HW_5.4/board.JPG)
+
 Созданная виртуальная машина
+
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Virt/HW_5.4/VM1.JPG)
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Virt/HW_5.4/VM2.JPG)
+
 3. Создать ваш первый готовый к боевой эксплуатации компонент мониторинга, состоящий из стека микросервисов.
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Virt/HW_5.4/grafana1.JPG)
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Virt/HW_5.4/grafana2.JPG)
