@@ -1,6 +1,6 @@
 # devops-netology
 ### performed by Kirill Karagodin
-#### HW6.3 PostgreSQL.
+#### HW6.4 PostgreSQL.
 
 1. Используя docker поднимите инстанс PostgreSQL (версию 13). Данные БД сохраните в volume.
 Подключитесь к БД PostgreSQL используя psql.
