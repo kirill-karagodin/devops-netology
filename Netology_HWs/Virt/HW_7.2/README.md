@@ -132,4 +132,4 @@ root@vb-micrapc:/opt/terraform#
 [Packer](https://www.packer.io/)
 
 Ссылку на репозиторий с исходной конфигурацией терраформа
-[terraform](https://github.com/kirill-karagodin/devops-netology/tree/main/Netology_HWs/Virt/HW_7.2)
+[terraform](https://github.com/kirill-karagodin/devops-netology/tree/main/Netology_HWs/Virt/HW_7.2/src)
