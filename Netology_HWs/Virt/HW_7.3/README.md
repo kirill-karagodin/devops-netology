@@ -264,4 +264,6 @@ Note: You didn't use the -out option to save this plan, so Terraform can't guara
 root@vb-micrapc:/opt/terraform#
 
 ````
+Ссылку на репозиторий конфигурацией терраформа
+[terraform](https://github.com/kirill-karagodin/devops-netology/tree/main/Netology_HWs/Virt/HW_7.3/src)
 
