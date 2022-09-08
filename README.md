@@ -26,7 +26,7 @@
 14. [Использование Python для решения типовых DevOps задач](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_4.2/README.md)
 15. [Языки разметки JSON и YAML](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_4.3/README.md)
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/img/git.jpg)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/git.jpg)
 
  **_Учебный модуль_** **Виртуализация, базы данных и Terraform**
 
@@ -51,7 +51,7 @@
 16. [Введение в Golang](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Virt/HW_7.5/README.md)
 17. [Написание собственных провайдеров для Terraform](https://github.com/kirill-karagodin/devops-netology/tree/main/Netology_HWs/Virt/HW_7.6)
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/img/HW_8.3/virt.jpg)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/virt.jpg)
 
 **_Учебный модуль_** **CI, мониторинг и управление конфигурациями**
 1. [Введение в Ansible](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.1/README.md)
