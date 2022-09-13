@@ -504,7 +504,7 @@ ERROR:   py39-ansible210: commands failed
 ERROR:   py39-ansible30: commands failed
 [root@5f36a78db424 vector-role]#
 ````
-<details>
+</details>
 
 4. Создайте облегчённый сценарий для molecule с драйвером `molecule_podman`. 
 ````bash
