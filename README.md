@@ -59,3 +59,4 @@
 3. [Использование Yandex Cloud](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.3/README.md)
 4. [Работа с Roles](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.4/README.md)
 5. [Тестирование Roles](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.5/README.md)
+6. [Создание собственных modules](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.6/README.md)
