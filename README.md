@@ -63,4 +63,4 @@
 5. [Тестирование Roles](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.5/README.md)
 6. [Создание собственных modules](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.6/README.md)
 - **Непрерывная разработка и интеграция**
-7. [Жизненный цикл ПО](https://)
+7. [Жизненный цикл ПО](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.1/README.md)
