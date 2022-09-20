@@ -54,9 +54,13 @@
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/virt.jpg)
 
 **_Учебный модуль_** **CI, мониторинг и управление конфигурациями**
+
+- **Система управления конфигурациями**
 1. [Введение в Ansible](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.1/README.md)
 2. [Работа с Playbook](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.2/README.md)
 3. [Использование Yandex Cloud](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.3/README.md)
 4. [Работа с Roles](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.4/README.md)
 5. [Тестирование Roles](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.5/README.md)
 6. [Создание собственных modules](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_8.6/README.md)
+- **Непрерывная разработка и интеграция**
+7. [Жизненный цикл ПО](https://)
