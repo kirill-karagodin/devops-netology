@@ -12,7 +12,9 @@
 5. Done fix -> On test 
 6. On test -> On fix, Done 
 7. Done -> Closed, Open
+
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.1/img/bag.JPG)
+
 Остальные задачи должны проходить по упрощённому workflow:
 
 8. Open -> On develop 
@@ -20,6 +22,7 @@
 10. Done develop -> On test 
 11. On test -> On develop, Done 
 12. Done -> Closed, Open
+
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.1/img/other.JPG)
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.1/img/WFs.JPG)
@@ -42,6 +45,6 @@
 Если всё отработало в рамках ожидания - выгрузить схемы workflow для импорта в XML. Файлы с workflow приложить к 
 решению задания.
 
-[bag workflow](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_9.1/bag.xml)
+[bag workflow](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.1/bag.xml)
 
-[other types of tasks](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devops/HW_9.1/oher%20tasks.xml)
+[other types of tasks](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.1/oher%20tasks.xml)
