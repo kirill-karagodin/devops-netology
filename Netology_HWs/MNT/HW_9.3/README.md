@@ -1,6 +1,6 @@
 # devops-netology
 ### performed by Kirill Karagodin
-#### HW 9.3 CI\CD.
+#### HW 9.3 Процессы CI/CD.
 
 ### Подготовка:
 
