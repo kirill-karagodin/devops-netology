@@ -56,7 +56,7 @@
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.4/img/run.JPG)
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.4/img/true.JPG)
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.4/img/folse.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.4/img/false.JPG)
 
 При прогоне Pipeline с включенной/выключенной галочкой 'prod_run' проявляется одна и та же ошибка
 ````bash
