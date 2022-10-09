@@ -66,3 +66,4 @@
 7. [Жизненный цикл ПО](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.1/README.md)
 8. [Процессы CI/CD](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.3/README.md)
 9. [Jenkins](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.4/README.md)
+10. [Teamcity](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.5/README.md)
