@@ -10,12 +10,9 @@
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.6/img/start.JPG)
 
 2. Создайте свой новый проект 
-
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.6/img/project.JPG)
-
 3. Создайте новый репозиторий в gitlab, наполните его файлами
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.6/img/repo.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.6/img/project.JPG)
 
 4. Проект должен быть публичным, остальные настройки по желанию
 
