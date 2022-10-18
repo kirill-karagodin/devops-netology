@@ -68,3 +68,5 @@
 9. [Jenkins](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.4/README.md)
 10. [Teamcity](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.5/README.md)
 11. [Gitlab](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.6/README.md)
+- **Мониторинг и логи**
+12. [Зачем и что нужно мониторить](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.1/README.md)
