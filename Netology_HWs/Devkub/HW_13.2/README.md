@@ -142,7 +142,7 @@ stage             Active   33m
 ````
 - Подготовил и применил, в котором volume подключен к двум контейнерам в поде для `prod`
   - [frontend](https://github.com/kirill-karagodin/devops-netology/tree/main/Netology_HWs/Devkub/HW_13.2/prod/frontend.yml)
-  - [bakend](https://github.com/kirill-karagodin/devops-netology/tree/main/Netology_HWs/Devkub/HW_13.2/prod/bakend.yml)
+  - [backend](https://github.com/kirill-karagodin/devops-netology/tree/main/Netology_HWs/Devkub/HW_13.2/prod/backend.yml)
   - [pvc](https://github.com/kirill-karagodin/devops-netology/tree/main/Netology_HWs/Devkub/HW_13.2/prod/pvc.yml)
 - Применяем манифесты
 ````bash
