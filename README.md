@@ -72,11 +72,11 @@
 12. [Зачем и что нужно мониторить](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.1/README.md)
 13. [Системы для мониторинга](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.2/README.md)
 14. [Средство визуализации Grafana](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.3/README.md)
-15. [Система сбора логов ELK]https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.4/README.md)
+15. [Система сбора логов ELK](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.4/README.md)
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/ci.jpg)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/ci.JPG)
 
-**_Учебный модуль_** **Администрирование и конфигурация Kubernetes**
+**_Учебный модуль_**  **Администрирование и конфигурация Kubernetes**
 
 - **Микросервисная архитектура**
 1. [Введение в микросервисы](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_11.1/README.md)
@@ -96,4 +96,4 @@
 13. [Инструменты для упрощения написания конфигурационных файлов. Helm и Jsonnet](https://github.com/kirill-karagodin/devops-netology/blob/main/img/inprogress.pdf)
 14. [Поддержка нескольких окружений на примере Qbec.](https://github.com/kirill-karagodin/devops-netology/blob/main/img/inprogress.pdf)
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/devkub.jpg)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/devkub.JPG)
