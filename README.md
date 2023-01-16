@@ -70,3 +70,30 @@
 11. [Gitlab](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_9.6/README.md)
 - **Мониторинг и логи**
 12. [Зачем и что нужно мониторить](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.1/README.md)
+13. [Системы для мониторинга](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.2/README.md)
+14. [Средство визуализации Grafana](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.3/README.md)
+15. [Система сбора логов ELK]https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/MNT/HW_10.4/README.md)
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/ci.jpg)
+
+**_Учебный модуль_** **Администрирование и конфигурация Kubernetes**
+
+- **Микросервисная архитектура**
+1. [Введение в микросервисы](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_11.1/README.md)
+2. [Микросервисы: принципы](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_11.2/README.md)
+3. [Микросервисы: подходы](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_11.3/README.md)
+4. [Микросервисы: масштабирование](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_11.4/README.md)
+- **Администрирование кластера Kubernetes**
+5. [Компоненты Kubernetes](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_12.1/README.md)
+6. [Команды для работы с Kubernetes](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_12.2/README.md)
+7. [Развертывание кластера на собственных серверах (лекция 1)](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_12.3/README.md)
+8. [Развертывание кластера на собственных серверах (лекция 2)](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_12.4/README.md)
+9. [Сетевые решения CNI](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_12.5/README.md)
+- **Конфигурация Kubernetes**
+10. [Контейнеры, поды, deployment, statefulset, services, endpoints](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_13.1/README.md)
+11. [Разделы и монтирование](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_13.2/README.md)
+12. [Работа c Kubectl](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_13.3/README.md)
+13. [Инструменты для упрощения написания конфигурационных файлов. Helm и Jsonnet](https://github.com/kirill-karagodin/devops-netology/blob/main/img/inprogress.pdf)
+14. [Поддержка нескольких окружений на примере Qbec.](https://github.com/kirill-karagodin/devops-netology/blob/main/img/inprogress.pdf)
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/devkub.jpg)
