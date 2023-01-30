@@ -98,7 +98,7 @@ mojnovse@mojno-vseMacBook HW_14.1 %
 ````
 - Получение информации в формате YAML и/или JSON
 
-[**YAML**](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_14.1/src/domain-cert.yaml))
+[**YAML**](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_14.1/src/domain-cert.yml)
 ````bash
 mojnovse@mojno-vseMacBook HW_14.1 % kubectl get secret domain-cert -o yaml
 apiVersion: v1
@@ -115,7 +115,7 @@ metadata:
 type: kubernetes.io/tls
 mojnovse@mojno-vseMacBook HW_14.1 %
 ````
-[**JSON**](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_14.1/src/secret.json)
+[**JSON**](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_14.1/src/secrets.json)
 ````bash
 mojnovse@mojno-vseMacBook HW_14.1 % kubectl get secret domain-cert -o json
 {
