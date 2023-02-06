@@ -129,6 +129,7 @@ mojnovse@mojno-vseMacBook src % kubectl get configmap domain -o json
 mojnovse@mojno-vseMacBook src %
 ````
 - Выгрузка в файл YAML/JSON
+
 [**JSON**](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_14.3/src/configmaps.json)
 ````bash
 mojnovse@mojno-vseMacBook src % kubectl get configmaps -o json > configmaps.json
