@@ -199,3 +199,11 @@ PING 172.17.0.5 (172.17.0.5): 56 data bytes
 round-trip min/avg/max = 0.210/0.430/0.590 ms
 / #
 ````
+Удаляем политики
+````bash
+mojnovse@mojno-vseMacBook src % kubectl delete networkpolicies db-0-pod-network-policy
+networkpolicy.networking.k8s.io "db-0-pod-network-policy" deleted
+mojnovse@mojno-vseMacBook src % kubectl delete networkpolicies voult-pod-network-policy
+networkpolicy.networking.k8s.io "voult-pod-network-policy" deleted
+mojnovse@mojno-vseMacBook src %
+````
