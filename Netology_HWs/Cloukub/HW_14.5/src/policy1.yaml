@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: voult-pod-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      name: 14.2-netology-vault
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          name: db-0

@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: db-0-pod-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      name: db-0
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          name: 14.2-netology-vault
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          name: 14.2-netology-vault
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          namespace: default
+    ports:
+    - protocol: UDP
+      port: 53
