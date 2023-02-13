@@ -21,15 +21,15 @@
 
 Для выполнения задания был создан конфиг для `terraform` в котором были указаны следующие значения:
 
-1. Создан NAT-инстанс (файл [`node1.tf`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.1/src/terraform/nede1.tf)) и присвоен ему адрес 192.168.10.254
-2. Создана виртуальная машина для подсети `public` (файл [`node2.tf`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.1/src/terraform/nede2.tf))
-3. Создана виртуальная машина для подсети `private` (файл [`node3.tf`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.1/src/terraform/nede3.tf)) без выхода в интернет
+1. Создан NAT-инстанс (файл [`node1.tf`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.1/src/terraform/node1.tf)) и присвоен ему адрес 192.168.10.254
+2. Создана виртуальная машина для подсети `public` (файл [`node2.tf`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.1/src/terraform/node2.tf))
+3. Создана виртуальная машина для подсети `private` (файл [`node3.tf`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.1/src/terraform/node3.tf)) без выхода в интернет
 4. Файл [`network.tf`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.1/src/terraform/network.tf)
 - Создана пустая VPC
 - Создана `subnet` с названием `public`, сетью 192.168.10.0/24. 
 - Создана `subnet` с названием `private`, сетью 192.168.20.0/24.
 - Создан `route table` и добавлен статический маршрут, направляющий весь исходящий трафик private сети в NAT-инстанс
-5. В файле `variables.tf` указываем образ для NAT-инстанса и так же его статический IP адрес 
+5. В файле [`variables.tf`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.1/src/terraform/variables.tf)) указываем образ для NAT-инстанса и так же его статический IP адрес 
 ````bash
 ...
 # Image node 1 (NAT)
