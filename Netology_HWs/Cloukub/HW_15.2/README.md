@@ -38,7 +38,7 @@ bucket_domain_name = "http://karagodin-netology-bucket.storage.yandexcloud.net/t
 external_load_balancer_ip = "51.250.41.123"
 mojnovse@mojno-vseMacBook terraform %
 ````
-2. Создан bucket Object Storage с [картинкой](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.2/img/test.jpg)
+2. Создан bucket Object Storage с [картинкой](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.2/img/test.JPG)
 - [Конфигурационный файл](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.2/src/terraform/bucket.tf)
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.2/img/bucket.JPG)
 - Скрин картинки в бакете
