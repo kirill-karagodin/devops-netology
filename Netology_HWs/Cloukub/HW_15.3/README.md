@@ -65,6 +65,7 @@ external_load_balancer_ip = "51.250.43.97"
 mojnovse@mojno-vseMacBook terraform %
 ````
 Картинка в бакете
+
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/img/b-test.JPG)
 - Ресурсы YC
 
