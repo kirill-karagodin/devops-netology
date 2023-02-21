@@ -22,7 +22,7 @@
 Конфиг [`terraform`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/src/terraform)
 - Создан ключ [**`kms`**](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/src/terraform/kms.tf)
 - Выдадим права на ключ сервисному аккаунту `sa-bucket`
-Так как при использовании попытке выдать права СА средствами `terraform`через блок в `kms.tf`
+Так как при попытке выдать права сервисному аккаунту средствами `terraform`через блок в `kms.tf`
 ````bash
 resource "yandex_resourcemanager_folder_iam_member" "kms-user" {
   folder_id = var.yandex_folder_id
