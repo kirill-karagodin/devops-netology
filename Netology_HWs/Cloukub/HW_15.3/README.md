@@ -85,6 +85,7 @@ mojnovse@mojno-vseMacBook terraform %
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/img/key.JPG)
 
 Bucket
+
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/img/bucket.JPG)
 
 
