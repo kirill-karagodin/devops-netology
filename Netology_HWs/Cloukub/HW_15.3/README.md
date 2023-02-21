@@ -19,6 +19,7 @@
 
 Задание 1.
 
+Конфиг [`terraform`](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/src/terraform)
 - Создан ключ [**`kms`**](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/src/terraform/kms.tf)
 - Выдадим права на ключ сервисному аккаунту `sa-bucket`
 Так как при использовании попытке выдать права СА средствами `terraform`через блок в `kms.tf`
@@ -71,9 +72,18 @@ mojnovse@mojno-vseMacBook terraform %
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/img/dashboard.JPG)
 Информация о ключе
 ````bash
+mojnovse@mojno-vseMacBook terraform % yc kms symmetric-key list
++----------------------+----------------------+----------------------+-------------------+---------------------+--------+
+|          ID          |         NAME         |  PRIMARY VERSION ID  | DEFAULT ALGORITHM |     CREATED AT      | STATUS |
++----------------------+----------------------+----------------------+-------------------+---------------------+--------+
+| abjbv1cjbsd5ssnppv7a | example-symetric-key | abj9gumrci1e7u0qj47l | AES_128           | 2023-02-21 15:31:44 | ACTIVE |
++----------------------+----------------------+----------------------+-------------------+---------------------+--------+
+
+mojnovse@mojno-vseMacBook terraform %
 
 ````
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/img/key.JPG)
+
 Bucket
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Cloukub/HW_15.3/img/bucket.JPG)
 
