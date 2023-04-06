@@ -93,7 +93,9 @@
 10. [Контейнеры, поды, deployment, statefulset, services, endpoints](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_13.1/README.md)
 11. [Разделы и монтирование](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_13.2/README.md)
 12. [Работа c Kubectl](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Devkub/HW_13.3/README.md)
-13. [Инструменты для упрощения написания конфигурационных файлов. Helm и Jsonnet](https://github.com/kirill-karagodin/devops-netology/blob/main/img/inprogress.pdf)
-14. [Поддержка нескольких окружений на примере Qbec.](https://github.com/kirill-karagodin/devops-netology/blob/main/img/inprogress.pdf)
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/devkub.JPG)
+
+**_Учебный модуль_** **Дипломный блок профессии DevOps-инженер**
+
+[Дипломная работа профессии DevOps-инженер]()
