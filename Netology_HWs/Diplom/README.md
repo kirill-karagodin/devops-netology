@@ -152,7 +152,7 @@
 
 Схема сети представлена на картинке ниже:
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/infra.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/infra_shema.JPG)
 
 Для реализации данной схемы, был описан конфиг [Terraform](https://github.com/kirill-karagodin/infra-playbook/tree/main/terraform):
 - [network.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/network.tf) - создает сеть и три подсети (group-1, stage, prod);
