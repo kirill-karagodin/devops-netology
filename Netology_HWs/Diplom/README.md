@@ -140,7 +140,7 @@
 ### Инфраструктура
 
 Для выполнения данного проекта необходимо спроектировать инфраструктуру и развернуть ее в Yandex Claud.
-В качестве целевой модели была выбранна следующая конфигурация:
+В качестве целевой модели была выбрана следующая конфигурация:
 1. Все компоненты управления инфраструктурой внутри облака (Jenkins+агенты, Grafana+Prometheus, Nginx(Балансировщик))
 вынесены в отдельную подсеть 10.200.80.0/28. (Вынос Grafana+Prometheus из класера, как предлагается в задании в разделе 
 "Подготовка cистемы мониторинга и деплой приложения" обусловлен тем что, используется два отдельных кластера, так же 
@@ -172,7 +172,7 @@
 - Зарезервированны статичные IP адреса для нод в своих подсетях
 - Для нод кластеров PROD и STAGE NAT - False
 
-После выполнения _terraform apply_ получаем следующее:
+После выполнения `terraform apply` получаем следующее:
 
 Общая картина
 
@@ -196,14 +196,15 @@ ClodDNS
 
 ### Установка CI/CD и мониторинга 
 
-Для первоначальной установки на "голые" сервера программного обеспечения будем использовать, созданный для этого проекта, plyabook [_infra-playbook_](https://github.com/kirill-karagodin/infra-playbook)
-Plyabook предназначен для следующих целей:
+Для первоначальной установки программного обеспечения на "голые" сервера будем использовать созданный для этого проекта playbook [_infra-playbook_](https://github.com/kirill-karagodin/infra-playbook)
+
+Playbook предназначен для следующих целей:
 - Установка Jenkins сервера
 - Установка ПО Jenkuns-a на агентах
-- Установка ПО Grafana и Prometheus (Grafana установлена версии 9.4.7. на данный момент доступна к скачиванию на террирории РФ, [ссылка на загрузку rpm пакета](https://dl.grafana.com/oss/release/grafana-9.4.7-1.x86_64.rpm))
+- Установка ПО Grafana и Prometheus (Grafana установлена версии `9.4.7`. на данный момент доступна к скачиванию на територии РФ, [ссылка на загрузку rpm пакета](https://dl.grafana.com/oss/release/grafana-9.4.7-1.x86_64.rpm))
 - Установка и конфигурирование Nginx
 
-В состав данного playbook-а вошли
+В состав данного playbook-а вошли:
 1. За основу был взят playbook [Jenkins](https://github.com/netology-code/mnt-homeworks/tree/MNT-13/09-ci-04-jenkins/infrastructure)
 2. Для установки Nginx использовалась роль [nginx-role](https://github.com/kirill-karagodin/nginx-role)
 3. Основой для Prometheus послужил [Ansible Playbook for Prometheus and Grafana](https://github.com/LucaRottiers/Prometheus-Grafana-Ansible-Playbook)
@@ -218,22 +219,21 @@ Jenkins доступен по [адресу](http://jenkins.karagodin-ka.ru/)
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/agents.JPG)
 
-
-Grafana доступна по [ссылке](http://grafana.karagodin-ka.ru)
-
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/grafana.JPG)
-
 Prometheus
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/prometheus1.JPG)
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/prometheus2.JPG)
 
+Grafana доступна по [ссылке](http://grafana.karagodin-ka.ru)
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/grafana.JPG)
+
 ### Работа внутри инфраструктуры, подготовка и деплой тестового приложения
 
 Для дальнейшей работы по проекту разделим ее на несколько шагов:
 1. Установка ПО Kubernetes в Prod и Stage кластеры.
-2. Установка компонента Node Exporter на сервера и в кластера Prod и Stage.
-3. Организация сборки и интеграции тестового приложения в кластера Prod и Stage.
+2. Установка компонента `node_exporter`+`kube-state-metrics` на сервера и в кластера Prod и Stage.
+3. Организация сборки и интеграции тестового приложения в кластеры `Prod` и `Stage`.
 
 #### Шаг 1.
 
@@ -246,15 +246,15 @@ Prometheus
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/kude-all.JPG)
 
-В управлении исходным котом ставим "Git" и указываем ссылку на наш репозиторий с kubespray
+В управлении исходным кодом ставим "Git" и указываем ссылку на наш репозиторий с `kubespray`
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/git.JPG)
 
-В шагах сборки
+В `Шаг сборки`
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/step.JPG)
 
-На картинке показан пример для PROD кластера. Для STAGE достаточно в шагах сброки заменить
+На картинке показан пример для PROD кластера. Для STAGE достаточно в шагах сборки заменить
 ````bash
 pip3.9 install -r requirements.txt
 ansible-playbook -i inventory/netology-cluster/k8s-prod.ini cluster.yml -b -v
@@ -269,10 +269,10 @@ ansible-playbook -i inventory/netology-cluster/k8s-ыефпу.ini cluster.yml -b
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/error.JPG)
 
-И при попытке подключиться с любого хоста внутри инфраструктуры мы получим тот же результат, так как на них нет приватной части ключа.
+При попытке подключиться с любого хоста внутри инфраструктуры мы получим тот же результат, так как на них нет приватной части ключа.
 Для решения данной проблемы мной были приняты следующие меры:
 1. Для подключения к недоступным хостам (все хосты кластеров Prod и Stage), я настроил тунельное подлючение со своего ноутбука.
-для этого неоходимо было создать файл ~/.ssh/cofig
+для этого неоходимо было создать файл `~/.ssh/cofig`
 ````bash
 mojnovse@mojno-vseMacBook ~ % ls -la ~/.ssh/
 total 48
@@ -367,4 +367,115 @@ node2   Ready    <none>          8d    v1.25.4   10.200.110.13   <none>        C
 
 ````
 #### Шаг 2.
+
+Для установки компонентов `node_exporter`+`kube-state-metrics` на сервера и в кластеры Prod и Stage будем использовать 
+playbook [`node_exporter`](https://github.com/kirill-karagodin/node_exporter).
+Он выполнит установку `node_exporter` на сервера (Jenkins+агенты, nginx и Grafana), так же произведет деплой в кластеры Prod и Stage
+`node_exporter`+`kube-state-metrics` при помощи `helm`.
+
+Организуем два Item-а со свободной конфигурацией, как для деплоя `kubespray`, со следующим содержанием:
+
+- как и для `kubespray`, В управлении исходным кодом ставим "Git" и указываем ссылку https://github.com/kirill-karagodin/node_exporter
+- в `Шаг сборки` 
+
+для Stage
+```bash
+ansible-playbook -i inventory/host.ini stage_site.yml -b -v
+```
+Для Prod
+````bash
+ansible-playbook -i inventory/host.ini prod_site.yml -b -v
+````
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/node_ex.JPG)
+
+
+Установка `node_exporter` на сервера реализованна при запуске задачи для [`PROD`](https://github.com/kirill-karagodin/node_exporter/blob/main/prod_site.yml)
+
+Панель мониторинга инфраструктуры
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/infra-board.JPG)
+
+Панель мониторинга кластера
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/stage_board.JPG)
+
+#### Шаг 3.
+
+Для организации сборки и интеграции тестового приложения в кластеры `Prod` и `Stage` был создан репозиторий на GitHub
+[test-app](https://github.com/kirill-karagodin/test-app)
+
+В директории `docker ` находятся файлы тестового приложения:
+- [Dockerfile](https://github.com/kirill-karagodin/test-app/blob/main/docker/Dockerfile) в котором указан базовый docker
+образ с nginx, и правило копирования в него при сборке файла index.html
+- [index.html](https://github.com/kirill-karagodin/test-app/blob/main/docker/index.html) 
+
+Директория `jenkinsfiles` включает в себя 3 jenkins файла:
+- [`docker_buid.jenkins`](https://github.com/kirill-karagodin/test-app/blob/main/jenkinsfiles/docker_buid.jenkins) - правила сборки и отправки 
+`docker` образа в DockerHub. Для данной задачи прописано опрашивать GitHub раз в 5 минут, и в случае изменений производить 
+автоматический `build` и `push` в DockerHub тестового приложения с последним тегом GitHub.
+- [`docker_deploy_stage.jenkins`](https://github.com/kirill-karagodin/test-app/blob/main/jenkinsfiles/docker_deploy_stage.jenkins) - деплой приложения в 
+`stage` кластер
+- [`docker_deploy_prod.jenkins`](https://github.com/kirill-karagodin/test-app/blob/main/jenkinsfiles/docker_deploy_prod.jenkins) - деплой приложения в 
+`prod` кластер
+
+Все три правила для pipline являются параметризованными сборками, что позволяет не только автоматически собирать контейнеры,
+но и собирать и деплоить на среды контейнеры нужных сборок. Данная опция полезна для `prod` среды, так как туда необходимо 
+выкатывать стабильные сборки. Так же позволит на `stage` произвести откат на стабильную версию если последняя сборка оказалась с дефектом.
+
+Далее заводим в Jenkins три Pipline
+
+В настройках Pipline выбираем `Pipline script from SCM` и в SCM `Git`
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/step0.JPG)
+
+Указываем ссылку на наш репозиторий 
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/step1.JPG)
+
+И путь до jenkinsfiles
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/step2.JPG)
+
+Результат
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/test_app.JPG)
+
+После того как отработает `test_app_build` сборки в [DockerHub](https://hub.docker.com/repository/docker/kirillkaragodin/test_app/general) 
+видим наши сборки
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/dockerhub.JPG)
+
+Деплой `stage` и `prod` при запуске 
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/deploy.JPG)
+
+`Stage` версия 1.2.7
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/s127.JPG)
+
+`Prod` версия 1.2.7
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/p127.JPG)
+
+Изменим логотип и немного текст, выставим тег `2.0.0` в GitHub
+
+`Stage` версия 2.0.0
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/s200.JPG)
+
+
+
+----------------------------
+Ссылки на ресурсы:
+
+1. http://jenkins.karagodin-ka.ru - Jenkins сервер логин `admim` пароль `Admin123456`
+2. http://grafana.karagodin-ka.ru - Grafana логин `admim` пароль `Admin123456`
+3. http://test-web.karagodin-ka.ru/  - приложение, среда `stage
+4. http://web.karagodin-ka.ru/ - приложение, среда `prod`
+5. https://github.com/kirill-karagodin/infra-playbook - установка ПО на сервера (также содержит в себе конфигурацию `terraform`)
+6. https://github.com/kirill-karagodin/kubespray - установка кластера Kubernetes
+7. https://github.com/kirill-karagodin/node_exporter - установка средств сбора метрик для мониторинга
+8. https://github.com/kirill-karagodin/test-app - тестовое приложение
+
 
