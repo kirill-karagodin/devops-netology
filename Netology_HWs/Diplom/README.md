@@ -1,6 +1,6 @@
 # devops-netology
-### performed by Kirill Karagodin
-#### Дипломный практикум в Yandex.Cloud
+#### performed by Kirill Karagodin
+## Дипломный практикум в Yandex.Cloud
 
 * [Цели:](#цели)
   * [Этапы выполнения:](#этапы-выполнения)
