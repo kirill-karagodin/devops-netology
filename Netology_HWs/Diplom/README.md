@@ -395,7 +395,7 @@ ansible-playbook -i inventory/host.ini prod_site.yml -b -v
 
 Панель мониторинга инфраструктуры
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/infra-board.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/infra_board.JPG)
 
 Панель мониторинга кластера
 
