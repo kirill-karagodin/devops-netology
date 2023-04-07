@@ -142,72 +142,71 @@
 Для выполнения данного проекта необходимо спроектировать инфраструктуру и развернуть ее в Yandex Claud.
 В качестве целевой модели была выбрана следующая конфигурация:
 1. Все компоненты управления инфраструктурой внутри облака (Jenkins+агенты, Grafana+Prometheus, Nginx(Балансировщик))
-вынесены в отдельную подсеть 10.200.80.0/28. (Вынос Grafana+Prometheus из класера, как предлагается в задании в разделе 
+вынесены в отдельную подсеть 10.200.80.0/28 (Вынос Grafana+Prometheus из класера, как предлагается в задании в разделе 
 "Подготовка cистемы мониторинга и деплой приложения" обусловлен тем что, используется два отдельных кластера, так же 
-предполагается настройка мониторинга и остальных серверов в инфраструктуре.).
+предполагается настройка мониторинга и остальных серверов в инфраструктуре облака.).
 2. "Боевой" кластер Kubernetes (PROD)  - 10.200.110.0/27 без доступа из "дикого" интернета.
 3. Тестовый кластер Kubernetes (STAGE) - 10.200.100.0/27 без доступа из "дикого" интернета.
 4. Отельные агенты для "боевой" и тестовой среды (stage_agent prod_agent). 
 5. Агенты имеют доступ только к своим средам.
 
-Схема сети представлена на картинке ниже
+Схема сети представлена на картинке ниже:
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/infra.JPG)
 
-Для реализации данной схемы, был описан конфиг [Terraform](https://github.com/kirill-karagodin/infra-playbook/tree/main/terraform)
-- [network.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/network.tf) - создает сеть и три подсети (group-1, stage, prod)
-- [stage_nodes.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/stage_nodes.tf) и [prod_nodes.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/prod_nodes.tf) - создание серверов для кластеров тестовой и боевой среды
-- [stage-agent.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/stage-agent.tf) и [prod-agent.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/prod-agent.tf) - агенты дженкинс
-- [jenkins-master.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/jenkins-master.tf) - сервер Jenkins
-- [grafana.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/grafana.tf) - сервер где будет располагаться Grafana+Prometheus
-- [nginx.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/nginx.tf) - балансировщик Nginx, в схеме он обрабатывает запросы из интернета и предоставляет доступ к ресурсам по DNS именам
-- [dns.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/dns.tf) - сервис YC
-- [bucket.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/bucket.tf) - сервис YC, куда поместим две картинки, которые будут использоваться в тестовом приложении
-
-В качестве ресурсов для всем нод в данной инфраструктуре (описанны в файле [variables.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/variables.tf))
+Для реализации данной схемы, был описан конфиг [Terraform](https://github.com/kirill-karagodin/infra-playbook/tree/main/terraform):
+- [network.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/network.tf) - создает сеть и три подсети (group-1, stage, prod);
+- [stage_nodes.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/stage_nodes.tf) и [prod_nodes.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/prod_nodes.tf) - создание серверов для кластеров тестовой и боевой среды;
+- [stage-agent.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/stage-agent.tf) и [prod-agent.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/prod-agent.tf) - агенты дженкинс;
+- [jenkins-master.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/jenkins-master.tf) - сервер Jenkins;
+- [grafana.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/grafana.tf) - сервер где будет располагаться Grafana+Prometheus;
+- [nginx.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/nginx.tf) - балансировщик Nginx, в схеме он обрабатывает запросы из интернета и предоставляет доступ к ресурсам по DNS именам;
+- [dns.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/dns.tf) - сервис YC;
+- [bucket.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/bucket.tf) - сервис YC, куда поместим две картинки, которые будут использоваться в тестовом приложении.
+В качестве ресурсов для всех нод в данной инфраструктуре (описаны в файле [variables.tf](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/variables.tf))
 было выделено следующее:
-- CPU - 2 core
-- RAM - 4Gb
-- HDD - 10Gb
-- Зарезервированны статичные IP адреса для нод в своих подсетях
-- Для нод кластеров PROD и STAGE NAT - False
+- CPU - 2 core;
+- RAM - 4Gb;
+- HDD - 10Gb;
+- Зарезервированы статичные IP адреса для нод в своих подсетях;
+- Для нод кластеров PROD и STAGE NAT - =`False`.
 
 После выполнения `terraform apply` получаем следующее:
 
-Общая картина
+Общая картина:
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/infra-all.JPG)
 
-Сервера
+Сервера:
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/servers.JPG)
 
-Bucket
+Bucket:
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/bucket.JPG)
 
-Балансировщики
+Балансировщики:
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/bl.JPG)
 
-ClodDNS
+CloudDNS:
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/dns.JPG)
 
 ### Установка CI/CD и мониторинга 
 
-Для первоначальной установки программного обеспечения на "голые" сервера будем использовать созданный для этого проекта playbook [_infra-playbook_](https://github.com/kirill-karagodin/infra-playbook)
+Для первоначальной установки программного обеспечения на "голые" сервера будем использовать созданный для этого проекта playbook [_infra-playbook_](https://github.com/kirill-karagodin/infra-playbook).
 
 Playbook предназначен для следующих целей:
-- Установка Jenkins сервера
-- Установка ПО Jenkuns-a на агентах
-- Установка ПО Grafana и Prometheus (Grafana установлена версии `9.4.7`. на данный момент доступна к скачиванию на територии РФ, [ссылка на загрузку rpm пакета](https://dl.grafana.com/oss/release/grafana-9.4.7-1.x86_64.rpm))
-- Установка и конфигурирование Nginx
+- Установка Jenkins сервера;
+- Установка ПО Jenkins-a на агентах;
+- Установка ПО Grafana и Prometheus (Grafana установлена версии `9.4.7`. На данный момент доступна к скачиванию на территории РФ, [ссылка на загрузку rpm пакета](https://dl.grafana.com/oss/release/grafana-9.4.7-1.x86_64.rpm));
+- Установка и конфигурирование Nginx.
 
 В состав данного playbook-а вошли:
-1. За основу был взят playbook [Jenkins](https://github.com/netology-code/mnt-homeworks/tree/MNT-13/09-ci-04-jenkins/infrastructure)
-2. Для установки Nginx использовалась роль [nginx-role](https://github.com/kirill-karagodin/nginx-role)
-3. Основой для Prometheus послужил [Ansible Playbook for Prometheus and Grafana](https://github.com/LucaRottiers/Prometheus-Grafana-Ansible-Playbook)
+1. За основу был взят playbook [Jenkins](https://github.com/netology-code/mnt-homeworks/tree/MNT-13/09-ci-04-jenkins/infrastructure);
+2. Для установки Nginx использовалась роль [nginx-role](https://github.com/kirill-karagodin/nginx-role);
+3. Основой для Prometheus послужил [Ansible Playbook for Prometheus and Grafana](https://github.com/LucaRottiers/Prometheus-Grafana-Ansible-Playbook).
 
 После окончания работы playbook-а получаем следующее:
 
@@ -215,15 +214,15 @@ Jenkins доступен по [адресу](http://jenkins.karagodin-ka.ru/)
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/jenkins.JPG)
 
-Подключенные агенты
+Подключенные агенты:
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/agents.JPG)
 
-Prometheus
+Prometheus:
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/prometheus1.JPG)
 
-Grafana доступна по [ссылке](http://grafana.karagodin-ka.ru)
+Grafana доступна по [ссылке](http://grafana.karagodin-ka.ru):
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/grafana.JPG)
 
@@ -263,17 +262,17 @@ ansible-playbook -i inventory/netology-cluster/k8s-prod.ini cluster.yml -b -v
 на
 ````bash
 pip3.9 install -r requirements.txt
-ansible-playbook -i inventory/netology-cluster/k8s-ыефпу.ini cluster.yml -b -v
+ansible-playbook -i inventory/netology-cluster/k8s-stage.ini cluster.yml -b -v
 ````
-Но при первом запуске мы получим ошибку по доступу, так как публичный ключ, который был оправлен на хосты при работе terraform-а,
+Но при первом запуске мы получим ошибку по доступу, так как публичный ключ, который был отправлен на хосты при работе terraform-а,
 не совпадает с приватным ключем пользователя jenkins, от имени которого будут проходить работы агентов.
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/error.JPG)
 
 При попытке подключиться с любого хоста внутри инфраструктуры мы получим тот же результат, так как на них нет приватной части ключа.
 Для решения данной проблемы мной были приняты следующие меры:
-1. Для подключения к недоступным хостам (все хосты кластеров Prod и Stage), я настроил тунельное подлючение со своего ноутбука.
-для этого неоходимо было создать файл `~/.ssh/cofig`
+1. Для подключения к недоступным хостам (все хосты кластеров Prod и Stage) я настроил туннельное подключение со своего ноутбука.
+для этого необходимо было создать файл `~/.ssh/cofig`
 ````bash
 mojnovse@mojno-vseMacBook ~ % ls -la ~/.ssh/
 total 48
@@ -391,7 +390,7 @@ ansible-playbook -i inventory/host.ini prod_site.yml -b -v
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/node_ex.JPG)
 
 
-Установка `node_exporter` на сервера реализованна при запуске задачи для `PROD`
+Установка `node_exporter` на сервера реализована при запуске задачи для `PROD`
 
 Панель мониторинга инфраструктуры
 
@@ -470,8 +469,8 @@ ansible-playbook -i inventory/host.ini prod_site.yml -b -v
 ----------------------------
 Ссылки на ресурсы:
 
-1. http://jenkins.karagodin-ka.ru - Jenkins сервер логин `admim` пароль `Admin123456`
-2. http://grafana.karagodin-ka.ru - Grafana логин `admim` пароль `Admin123456`
+1. http://jenkins.karagodin-ka.ru - Jenkins сервер логин `admim` пароль `Admin123456!`
+2. http://grafana.karagodin-ka.ru - Grafana логин `admim` пароль `Admin123456!`
 3. http://test-web.karagodin-ka.ru/  - приложение, среда `stage
 4. http://web.karagodin-ka.ru/ - приложение, среда `prod`
 5. https://github.com/kirill-karagodin/infra-playbook - установка ПО на сервера (также содержит в себе конфигурацию `terraform`)
