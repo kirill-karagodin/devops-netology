@@ -222,11 +222,12 @@ Jenkins доступен по [адресу](http://jenkins.karagodin-ka.ru/)
 Prometheus
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/prometheus1.JPG)
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/prometheus2.JPG)
 
 Grafana доступна по [ссылке](http://grafana.karagodin-ka.ru)
 
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/grafana.JPG)
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/prometheus2.JPG)
 
 ### Работа внутри инфраструктуры, подготовка и деплой тестового приложения
 
@@ -328,7 +329,7 @@ mojnovse@mojno-vseMacBook ~ % ssh prod-node1
 Last login: Wed Apr  5 19:28:51 2023 from 10.200.80.5
 [cloud-user@cp1 ~]$
 ````
-Далее копируем публичную часть пользователя jenkins ключа на ноды (с prod агента на ноды кластера PROD, со stage агента - на STAGE)
+Далее копируем публичную часть ключа пользователя jenkins на ноды (с prod агента на ноды кластера PROD, со stage агента - на STAGE)
 
 Пример с первой ноды STAGE кластера
 ````bash
@@ -390,7 +391,7 @@ ansible-playbook -i inventory/host.ini prod_site.yml -b -v
 ![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/node_ex.JPG)
 
 
-Установка `node_exporter` на сервера реализованна при запуске задачи для [`PROD`](https://github.com/kirill-karagodin/node_exporter/blob/main/prod_site.yml)
+Установка `node_exporter` на сервера реализованна при запуске задачи для `PROD`
 
 Панель мониторинга инфраструктуры
 
@@ -402,13 +403,13 @@ ansible-playbook -i inventory/host.ini prod_site.yml -b -v
 
 #### Шаг 3.
 
-Для организации сборки и интеграции тестового приложения в кластеры `Prod` и `Stage` был создан репозиторий на GitHub
+Для организации сборки и интеграции тестового приложения в кластеры `Prod` и `Stage`, был создан репозиторий на GitHub
 [test-app](https://github.com/kirill-karagodin/test-app)
 
 В директории `docker ` находятся файлы тестового приложения:
 - [Dockerfile](https://github.com/kirill-karagodin/test-app/blob/main/docker/Dockerfile) в котором указан базовый docker
 образ с nginx, и правило копирования в него при сборке файла index.html
-- [index.html](https://github.com/kirill-karagodin/test-app/blob/main/docker/index.html) 
+- [index.html](https://github.com/kirill-karagodin/test-app/blob/main/docker/index.html) - статичная страница для вывода при обращении в тестовое приложение
 
 Директория `jenkinsfiles` включает в себя 3 jenkins файла:
 - [`docker_buid.jenkins`](https://github.com/kirill-karagodin/test-app/blob/main/jenkinsfiles/docker_buid.jenkins) - правила сборки и отправки 
@@ -477,5 +478,6 @@ ansible-playbook -i inventory/host.ini prod_site.yml -b -v
 6. https://github.com/kirill-karagodin/kubespray - установка кластера Kubernetes
 7. https://github.com/kirill-karagodin/node_exporter - установка средств сбора метрик для мониторинга
 8. https://github.com/kirill-karagodin/test-app - тестовое приложение
+9. https://hub.docker.com/repository/docker/kirillkaragodin/test_app/general - хранилище готовых сборок
 
 
