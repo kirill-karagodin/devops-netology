@@ -399,7 +399,7 @@ ansible-playbook -i inventory/host.ini prod_site.yml -b -v
 
 Панель мониторинга кластера
 
-![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/stage_board.JPG)
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/kub_board.JPG)
 
 #### Шаг 3.
 
