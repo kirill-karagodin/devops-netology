@@ -479,4 +479,55 @@ ansible-playbook -i inventory/host.ini prod_site.yml -b -v
 8. https://github.com/kirill-karagodin/test-app - тестовое приложение
 9. https://hub.docker.com/repository/docker/kirillkaragodin/test_app/general - хранилище готовых сборок
 
+----------------------------
+
+### Доработки по проекту
+
+#### Перенос хранение terraform state в бакете Яндекс.Облака
+
+Для переноса хранение terraform state в бакете Яндекс.Облака добавим в файл ['provider.tf'](https://github.com/kirill-karagodin/infra-playbook/blob/main/terraform/provider.tf) блок 
+настройки бэкенда
+````bash
+  backend "s3" {
+    endpoint   = "storage.yandexcloud.net"
+    bucket     = "karagodin-project-bucket"
+    region     = "ru-central1"
+    key        = "terraform.tfstate"
+    access_key = "YCAJEgWhukwPlmy7VCGduYfaT"
+    secret_key = "YCMP423X7Vi2TSVMjJDj1yh2l_S1fOWF21svclAk"
+
+    skip_region_validation      = true
+    skip_credentials_validation = true
+  }
+}
+````
+Далее запускаем команду 'terraform init -migrate-state'
+````bash
+mojnovse@mojno-vseMacBook terraform % terraform init -migrate-state
+
+Initializing the backend...
+Do you want to copy existing state to the new backend?
+................
+Initializing provider plugins...
+- Reusing previous version of yandex-cloud/yandex from the dependency lock file
+- Reusing previous version of hashicorp/local from the dependency lock file
+- Using previously-installed yandex-cloud/yandex v0.89.0
+- Using previously-installed hashicorp/local v2.4.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+mojnovse@mojno-vseMacBook terraform %
+````
+
+Файл в хранилище
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/img/s3.JPG)
+
 
