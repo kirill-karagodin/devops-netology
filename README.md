@@ -98,4 +98,6 @@
 
 **_Учебный модуль_** **Дипломный блок профессии DevOps-инженер**
 
-[Дипломная работа профессии DevOps-инженер]()
+[Дипломная работа профессии DevOps-инженер](https://github.com/kirill-karagodin/devops-netology/blob/main/Netology_HWs/Diplom/README.md)
+
+![](https://github.com/kirill-karagodin/devops-netology/blob/main/img/diplom.JPG)
